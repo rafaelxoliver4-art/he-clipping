@@ -235,26 +235,32 @@ SECTORS = {
         "covered": ["YDUQ", "COGN", "ANIM", "AFYA", "LAUR"],
         "peers": [
             "YDUQS", "Estácio", "Estacio",
-            "Cogna", "Kroton", "Vasta", "Saber",
-            "Ânima", "Anima", "Inspirali",
+            "Cogna", "Kroton", "Vasta Educação",
+            "Ânima Educação", "Inspirali",
             "Afya", "Afya Educacional",
-            "Laureate", "Adtalem", "Strategic Education", "Grand Canyon",
-            "Cruzeiro do Sul", "Adtalem Brasil",
+            "Laureate Educação", "Adtalem", "Strategic Education", "Grand Canyon",
+            "Cruzeiro do Sul Educacional", "Adtalem Brasil",
         ],
         "keywords": [
             # Tickers + parent names
+            # NB (2026-06-02): bare ambiguous common words removed/qualified —
+            # "Saber"(=to know), "Anima"(=animates), "Vasta"(=vast),
+            # "Laureate"(=award winner) were Google-News queries that flooded
+            # the Higher Education sector with unrelated noise (snail festivals,
+            # market reports, celebrity news) and buried real education news.
+            # Disambiguated forms still cover every company.
             "YDUQS", "YDUQ", "Estácio",
-            "Cogna", "COGN", "Kroton", "Vasta", "Saber",
-            "Ânima", "Anima", "ANIM", "Inspirali",
+            "Cogna", "COGN", "Kroton", "Vasta Educação",
+            "Ânima Educação", "ANIM", "Inspirali",
             "Afya", "AFYA",
-            "Laureate", "LAUR",
+            "Laureate Educação", "LAUR",
             # Subsidiary brands (acquired groups still produce news under brand)
             "Anhanguera", "Pitágoras", "Uniderp", "Unime",
             "Wyden", "iThink Medical", "Medcel",
-            "Una", "UniBH", "Unifacs", "São Judas",
+            "Centro Universitário Una", "UniBH", "Unifacs", "São Judas",
             "Anhembi Morumbi", "UAM Anhembi",
             # BR competitive peers (non-covered)
-            "Cruzeiro do Sul", "Cruzeiro do Sul Educacional",
+            "Cruzeiro do Sul Educacional",
             # MEC regulation + key programs
             "MEC", "MEC EAD", "MEC regulação", "portaria MEC", "decreto educação",
             "recredenciamento MEC", "credenciamento institucional",
