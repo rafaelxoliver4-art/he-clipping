@@ -1,0 +1,7 @@
+# Real H&E News Clipping examples — Rafael Oliveira (UBS LatAm H&E)
+#
+# When real clippings start going out, paste examples here for the learn cycle
+# to use as editorial ground truth (same role TMT examples play in the TMT pipeline).
+#
+# For now, this file is empty — the system still works, just without the
+# editorial-ground-truth signal until you populate it.

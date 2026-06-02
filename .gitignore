@@ -1,0 +1,16 @@
+# ── Secrets — NEVER commit ──────────────────────────────────────────
+.env
+
+# ── Generated data / logs (regenerable, bulky) ──────────────────────
+output/
+logs/
+cloud/
+
+# ── Python ──────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── Editor / misc ───────────────────────────────────────────────────
+_email_preview.html
+.vscode/
