@@ -69,7 +69,8 @@ US edition only for AFYA/LAUR/GLP-1/global pharma.
    take" are disabled** (`write_notes=False`).
 4. **Safety nets** — `reattach_links`, `enforce_ext_cap` (≤2 Google-News items),
    `enforce_covered_inclusion` (force-include any covered-name story from ANY
-   source, ≤2/ticker, **skipping the company's own website**), then link-resolve →
+   source, ≤2/ticker, **skipping the company's own website**, and **placed in its
+   proper theme** — not a catch-all section), then link-resolve →
    `verify_freshness` (reads each article's *real* publish date, drops stale).
    **Empty digests are NOT sent** (skip-empty guard).
 5. **Deliver** — `email_sender.py` (Gmail SMTP) + markdown to vault `raw/clippings_he/`.
@@ -99,6 +100,21 @@ still read "07-00"/"17-00 BRT" but the morning one fires **06:40**.
 - Editorial rules: `wiki_context.py` → `ANALYST_CONTEXT`.
 
 ## Change log (most recent first — APPEND here on every change)
+- **2026-06-03 (pm)** — **Education-visibility + ANS-data fixes** (both pipelines for
+  #1). (1) **Force-included covered-name items now land in their PROPER theme**
+  (e.g. a YDUQ buyback shows under "Education - Companies") instead of a catch-all
+  "Forced inclusion (covered name)" section. This was the real reason education
+  looked empty: YDUQ/AFYA/COGN news *was* in the digest, just hidden in the
+  catch-all. Verified on today's CSV — 6 covered-name items now route to Education,
+  5 to Health. (2) Added ANS **data-release** keywords (`ANS divulga dados`,
+  `ANS beneficiários`, `beneficiários planos de saúde`, `vidas planos de saúde`,
+  `ANS dados saúde suplementar`, …) to Health - Payers & Pharma so the recurring
+  monthly beneficiários/vidas releases are tracked (the "ANS divulga números de
+  beneficiários" release prompted this). (3) **Disambiguated "Estácio"** (collides
+  with the Rio neighborhood) — qualified the gnews query to `universidade Estácio`/
+  `Estácio YDUQS` and gated the force-include alias (added `estacio`/`estácio` to
+  `_AMBIGUOUS_ALIASES`, require YDUQ3/qualifier). 0 neighborhood noise now leaks
+  into Education. Touched `config.py`, `merge_and_clean.py`.
 - **2026-06-03** — **Restructured into 6 themes** (3 health + GLP-1 separate + 2
   education): "Health - Providers", "Health - Payers & Pharma",
   "Cross-cutting (GLP-1)", "Public Health & Regulation", "Education - Companies",
@@ -130,10 +146,12 @@ still read "07-00"/"17-00 BRT" but the morning one fires **06:40**.
   a manual re-run (`_run_catchup.py`).
 - **Morning runs (Tue–Fri) are the overnight delta** (cross-run dedup) → can be
   thin on quiet nights. Monday uses a 72h weekend look-back.
-- **Education vs Health imbalance:** RESOLVED 2026-06-03 — restructured into 6
-  themes (3 health + GLP-1 + 2 education); education input doubled. Note: digest
-  *output* still reflects materiality, so on thin-news days education can be light
-  (correct, not a regression).
+- **Education vs Health imbalance:** RESOLVED 2026-06-03 — (a) restructured into 6
+  themes, education input doubled; (b) force-included covered-name news now lands in
+  its theme, so YDUQ/AFYA/COGN stories show under "Education - Companies" instead of
+  a catch-all that made the section look empty; (c) de-noised ambiguous keywords
+  (`Estácio` etc.). Note: digest *output* still reflects materiality, so on genuinely
+  thin-news days education can be light (correct, not a regression).
 - **Auto-learn rewrites `wiki_context.py`** periodically — remember to commit it.
 
 ## Gotchas

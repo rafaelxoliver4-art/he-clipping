@@ -173,6 +173,13 @@ SECTORS = {
             "ANS", "ANS reajuste", "ANS regulação", "ANS portabilidade",
             "ANS resolução normativa", "ANS RN", "ANS RN reajuste",
             "ANS rol de procedimentos", "ANS notícias",
+            # ANS DATA releases — recurring monthly beneficiários/vidas data,
+            # material for HAPV/SAUD/ODPV (added 2026-06-03 after the "ANS divulga
+            # números de beneficiários" release wasn't tracked cleanly).
+            "ANS divulga dados", "ANS divulga beneficiários", "ANS beneficiários",
+            "ANS números beneficiários", "beneficiários planos de saúde",
+            "vidas planos de saúde", "ANS dados saúde suplementar",
+            "ANS painel beneficiários",
             "MLR Brasil", "MLR plano saúde", "sinistralidade plano saúde",
             "sinistralidade saúde suplementar", "MCR plano de saúde",
             "VCMH variação custo médico", "inflação médica",
@@ -266,7 +273,10 @@ SECTORS = {
         "keywords": [
             # Tickers + parent names (ambiguous bare words removed 2026-06-02 —
             # "Saber"/"Anima"/"Vasta"/"Laureate" flooded the sector with noise)
-            "YDUQS", "YDUQ", "Estácio",
+            # "Estácio" qualified 2026-06-03 — bare "Estácio" pulled Rio-
+            # neighborhood noise (crashes, Sesc events). Company is still caught
+            # via YDUQS/YDUQ3 and the qualified brand queries below.
+            "YDUQS", "YDUQ", "universidade Estácio", "Estácio YDUQS",
             "Cogna", "COGN", "Kroton", "Vasta Educação",
             "Ânima Educação", "ANIM", "Inspirali",
             "Afya", "AFYA",

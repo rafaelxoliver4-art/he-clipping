@@ -277,6 +277,8 @@ _AMBIGUOUS_ALIASES = {
     "afya",    # "afya" is rare in PT but better safe
     "laureate",  # "Nobel Laureate" / "Pulitzer Laureate" — common phrase
     "laur",      # bare ticker collides with the name "Laur" (e.g. guitarist Laur Joamets)
+    "estacio",   # YDUQS brand, but also a Rio neighborhood — require YDUQ3/qualifier
+    "estácio",
 }
 
 _CORPORATE_QUALIFIERS = {
@@ -392,7 +394,10 @@ def enforce_covered_inclusion(report: dict, raw_rows: list, max_add: int = 10,
             continue
         added_keys.add(tk)
         per_ticker[ticker] = per_ticker.get(ticker, 0) + 1
-        sec_name = "Forced inclusion (covered name)"
+        # Place force-added covered-name items in their PROPER sector (2026-06-03)
+        # so e.g. a YDUQ buyback shows under "Education - Companies" instead of a
+        # catch-all section that made covered-name themes look empty.
+        sec_name = _guess_sector(row)
         if sec_name not in report:
             report[sec_name] = []
         report[sec_name].append({
