@@ -559,13 +559,13 @@ DIRECT_SOURCES = [
 
     # ── Health-specific ───────────────────────────────────────────────────────
     {
-        # 2026-06-01: section RSS dead (404) + section page JS-rendered → was
-        # returning 0 items. Repointed to the live canonical feed; health
-        # pieces are re-sectored by title downstream. (Valor Impresso above
-        # also now carries the print health deep-dives.)
+        # 2026-06-02: pointed at Valor's dedicated HEALTH section feed on
+        # pox.globo.com (the arc/outboundfeeds one 404s; the general rss/valor
+        # was injecting only general noise into the Health bucket). Low-volume
+        # but on-target; Valor Impresso above carries the bigger print pieces.
         "name": "Valor Saúde",
         "url":  "https://valor.globo.com/empresas/saude/",
-        "rss":  "https://valor.globo.com/rss/valor",
+        "rss":  "https://pox.globo.com/rss/valor/empresas/saude",
         "sector": "Health",
     },
     {
@@ -616,13 +616,14 @@ DIRECT_SOURCES = [
 
     # ── Education-specific ────────────────────────────────────────────────────
     {
-        # 2026-06-01: section RSS dead (404) + section page JS-rendered → was
-        # returning 0 items (root cause of thin education coverage). Repointed
-        # to the live canonical feed; Valor Impresso above carries the print
-        # education deep-dives (e.g. "Mensalidade cai 33% em universidades").
+        # 2026-06-02: pointed at Valor's dedicated EDUCATION section feed on
+        # pox.globo.com (the arc/outboundfeeds one 404s; the general rss/valor
+        # was injecting only general noise into the Education bucket). Low-volume
+        # but on-target; Valor Impresso above carries the bigger print education
+        # deep-dives (e.g. "Mensalidade cai 33% em universidades").
         "name": "Valor Educação",
         "url":  "https://valor.globo.com/empresas/educacao/",
-        "rss":  "https://valor.globo.com/rss/valor",
+        "rss":  "https://pox.globo.com/rss/valor/empresas/educacao",
         "sector": "Education",
     },
     {
@@ -636,6 +637,23 @@ DIRECT_SOURCES = [
         "name": "Veja Educação",
         "url":  "https://veja.abril.com.br/educacao/",
         "rss":  "https://veja.abril.com.br/educacao/feed",
+        "sector": "Education",
+    },
+    {
+        # 2026-06-02: higher-ed sector trade press — regulation, EAD, avaliação,
+        # jurídico. Directly relevant to the covered private-education names
+        # (YDUQ/COGN/ANIM/AFYA). ~13 items via RSS.
+        "name": "Revista Ensino Superior",
+        "url":  "https://revistaensinosuperior.com.br/",
+        "rss":  "https://revistaensinosuperior.com.br/feed/",
+        "sector": "Education",
+    },
+    {
+        # 2026-06-02: official news agency, education desk — reliable, clean
+        # (Enem, MEC, public-university news). Low volume but high signal.
+        "name": "Agência Brasil Educação",
+        "url":  "https://agenciabrasil.ebc.com.br/educacao",
+        "rss":  "https://agenciabrasil.ebc.com.br/rss/educacao/feed.xml",
         "sector": "Education",
     },
     {
