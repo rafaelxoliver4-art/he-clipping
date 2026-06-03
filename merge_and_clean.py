@@ -276,6 +276,7 @@ _AMBIGUOUS_ALIASES = {
     "vivo",
     "afya",    # "afya" is rare in PT but better safe
     "laureate",  # "Nobel Laureate" / "Pulitzer Laureate" — common phrase
+    "laur",      # bare ticker collides with the name "Laur" (e.g. guitarist Laur Joamets)
 }
 
 _CORPORATE_QUALIFIERS = {
@@ -641,6 +642,20 @@ def _cross_dedupe(rows: List[Dict]) -> List[Dict]:
     return out
 
 
+# ── Opinion / column filter (2026-06-02) ─────────────────────────────────────
+# Opinion pieces and signed columns are not actionable for the clipping. Match
+# "Opinião" only when it's a section label (next to a separator) so we don't
+# catch "pesquisa de opinião"; plus opinion/column/blog URL paths.
+_OPINION_TITLE_RE = re.compile(r"(?i)(?:^|[\-–—|]\s*)opini[ãa]o\s*[\-–—:|]")
+_OPINION_URL_RE   = re.compile(r"(?i)/(?:opiniao|colunas?|blogs?)/")
+
+
+def _is_opinion(row: Dict) -> bool:
+    title = row.get("title", "") or ""
+    link  = row.get("link", "") or ""
+    return bool(_OPINION_TITLE_RE.search(title) or _OPINION_URL_RE.search(link))
+
+
 def run(gnews_rows: List[Dict], direct_rows: List[Dict],
         apply_cross_run_dedup: bool = True) -> Tuple[List[Dict], str]:
     """
@@ -654,6 +669,12 @@ def run(gnews_rows: List[Dict], direct_rows: List[Dict],
 
     # Drop empty titles
     all_rows = [r for r in all_rows if (r.get("title") or "").strip()]
+
+    # Drop opinion / column pieces — not actionable for the clipping (2026-06-02)
+    _op_before = len(all_rows)
+    all_rows = [r for r in all_rows if not _is_opinion(r)]
+    if _op_before - len(all_rows):
+        print(f"  -> opinion filter: removed {_op_before - len(all_rows)}")
 
     # Cross-source dedup (same story from gnews AND a direct RSS feed)
     before = len(all_rows)
