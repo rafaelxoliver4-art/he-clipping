@@ -481,6 +481,14 @@ DIRECT_SOURCES = [
         "sector": "General",
     },
     {
+        # 2026-06-02: O Globo's dedicated education section feed (pox.globo.com)
+        # — 100 items. Strong education-volume source.
+        "name": "O Globo Educação",
+        "url":  "https://oglobo.globo.com/brasil/educacao/",
+        "rss":  "https://pox.globo.com/rss/oglobo/brasil/educacao",
+        "sector": "Education",
+    },
+    {
         "name": "Brazil Journal",
         "url":  "https://braziljournal.com/",
         "rss":  "https://braziljournal.com/feed/",
@@ -666,9 +674,11 @@ DIRECT_SOURCES = [
         "sector": "Education Regulatory",
     },
     {
+        # 2026-06-02: upgraded from HTML scrape (~9 items) to the pox.globo.com
+        # RSS feed (100 items) — big education-volume gain.
         "name": "G1 Educação",
         "url":  "https://g1.globo.com/educacao/",
-        "rss":  "",   # HTML scrape (G1 RSS structure is inconsistent per section)
+        "rss":  "https://pox.globo.com/rss/g1/educacao",
         "sector": "Education",
     },
 
