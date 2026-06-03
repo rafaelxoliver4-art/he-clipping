@@ -358,6 +358,15 @@ def enforce_covered_inclusion(report: dict, raw_rows: list, max_add: int = 10,
                     hit_name = cn
         if not hit_name:
             continue
+        # Guard: don't force-include a company's OWN website / PR content (e.g.
+        # source "Afya | Home", "Rede D'Or", "Oncoclínicas"). If the source name
+        # itself contains a covered name, it's the company's own channel —
+        # marketing, not news. (2026-06-03)
+        _src_norm = _strip_accents((row.get("source", "") or "").lower())
+        if any(re.search(r"(?:^|[^a-z0-9])" + re.escape(cn) + r"(?:[^a-z0-9]|$)", _src_norm)
+               for cn in covered if len(cn) >= 4):
+            counter["skipped"] += 1
+            continue
         # Ambiguity guard: if alias is ambiguous, require ticker form OR a
         # corporate qualifier in the title. Otherwise drop (e.g. "Fleury" in
         # a sports headline).

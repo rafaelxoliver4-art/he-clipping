@@ -5,7 +5,19 @@
 # clipping curation (Job 1) and note writing (Job 3). The learn cycle refines
 # this string every 10 runs based on all 7+ learning sources.
 
-ANALYST_CONTEXT = """## UBS LatAm H&E — Analyst Triage Context
+ANALYST_CONTEXT = """The session excerpts in C (News Writer) and D (Claude Code) are essentially all TMT (Millicom, TOTVS, GLOB/CINT, AMX/TEF-BZ/TIM, portability data, model-building) — I'm ignoring all of that per the filtering rule. The actionable H&E signal comes from B (run log notes written), F (corpus promotion gaps), G (H&E Observer doc), and H (revealed priorities, which the context already handles well).
+
+Concrete H&E developments clearly evidenced and not yet in the context:
+1. **FLRY/ONCO Fleury–Porto venture** as a capitalization path for distressed ONCO (note written) — extends running story #12.
+2. **SAUD/RDOR payer-provider hospital partnership** (R$59.2mn Rio hospital note written) — new multi-tag thread.
+3. **First domestic semaglutide pen now CLEARED by ANVISA** (note written) — the anticipated archetype in #16 has fired; watch shifts to ANS response.
+4. **Desenrola FIES** renegotiation program — specific, recurring under #9.
+5. **Lei de Cotas / MPF enforcement on idle medicine vagas** — new YDUQ/ANIM/AFYA read-across (curated, never promoted).
+6. **SAUD/RDOR and FLRY/ONCO** added to multi-ticker format (both tags were actually used in notes).
+
+Here is the updated ANALYST_CONTEXT:
+
+## UBS LatAm H&E — Analyst Triage Context
 
 ### Triage Decision — Full Note vs. Other News vs. Omit
 
@@ -119,7 +131,12 @@ competitive context to keep signal density high.
   Brasília 75-unit print is the archetype), (ii) named M&A, or (iii) an
   ANS / payer-contract event. Tighten generic premium-hospital innovation
   color (e.g., Einstein-Philips DIU center) to Other News unless there is
-  a direct RDOR transmission.
+  a direct RDOR transmission. **Payer-partnership sub-thread:** RDOR
+  capacity deals struck WITH a covered payer (e.g., the Bradsaúde / Rede
+  D'Or R$59.2mn agreement for a new Rio hospital) are full-note territory —
+  they are a concrete data point on both RDOR's expansion pipeline and the
+  payer's network-build strategy. Tag SAUD/RDOR (or HAPV/RDOR) and frame the
+  transmission to both names.
 - ONCO (Oncoclínicas): Cancer-care network roll-up. Triggers: clinic
   acquisitions, oncology drug approvals (immuno-oncology), pricing pressure
   from payers, court rulings on cancer-drug coverage. Smaller-cap, more
@@ -128,7 +145,12 @@ competitive context to keep signal density high.
   at CVM, PwC continuity flags, debt restructuring, controller transactions,
   covenant negotiations, or extrajudicial-recovery capitalization rounds
   (e.g., the R$500mn+ raise with three counterparties) is HIGH-priority full
-  note territory. SUS-channel oncology contract wins (e.g., the Lula R$-
+  note territory. **Capitalization-via-partner sub-thread:** structured deals
+  that open a fresh capitalization path for distressed ONCO — notably the
+  Fleury–Porto venture that drove an ~57% share spike — are full-note material
+  and re-price the equity sharply; tag FLRY/ONCO and frame the read-across to
+  Fleury (diagnostics/venture exposure) as well as the ONCO balance-sheet
+  relief. SUS-channel oncology contract wins (e.g., the Lula R$-
   package of 23 new high-cost oncology medicines) are a separate ONCO/BLAU
   thread — material when scope or eligibility is clarified. **ONCO is the
   single most-noted ticker in H&E (12 Observer notes) — default to KEEP /
@@ -151,7 +173,13 @@ competitive context to keep signal density high.
   economics or B2B retention is the angle, not generic dental-market color).
 - SAUD (Bradsaúde): Newer listing, Bradesco's health-plan vehicle. Triggers:
   growth in lives covered, distribution synergies with Bradesco Seguros,
-  competitive dynamics vs HAPV / SulAmérica / Amil.
+  competitive dynamics vs HAPV / SulAmérica / Amil. **Network-build sub-thread:**
+  Bradsaúde partnerships with hospital operators to secure capacity (e.g., the
+  Rede D'Or R$59.2mn new-Rio-hospital agreement) are full-note candidates —
+  they evidence SAUD's verticalization/network strategy and double as an RDOR
+  pipeline data point. Tag SAUD/RDOR. SAUD free-float / B3 listing-structure
+  items (e.g., authorization to keep free float below the minimum) are
+  Other News unless paired with a capital-return or strategic read-across.
 
 **DIAGNOSTICS:**
 - FLRY (Fleury): Diagnostic-imaging + clinical-analysis leader. Triggers: B2C
@@ -160,10 +188,14 @@ competitive context to keep signal density high.
   AI-driven imaging cost pressure, expansion of premium "Saúde iD"
   vertical-care offering, **premium-hospital partnerships** (Sírio-Libanês,
   Einstein, Mater Dei diagnostic-services deals are direct B2B revenue
-  signals and read-across to the premium-network strategy). Note: FLRY is
-  consistently curated but rarely promoted — tighten to: only full-note FLRY
-  on partnership announcements, payer-reimbursement rulings, B2B contract
-  wins, or material capacity expansion. Generic AI-in-radiology color = Other.
+  signals and read-across to the premium-network strategy), **and
+  ventures/JVs that deploy FLRY capital into adjacent assets** (e.g., the
+  Fleury–Porto venture that became a capitalization path for distressed
+  ONCO — tag FLRY/ONCO, full note). Note: FLRY is consistently curated but
+  rarely promoted — tighten to: only full-note FLRY on partnership
+  announcements, payer-reimbursement rulings, B2B contract wins, venture/JV
+  capital-deployment news, or material capacity expansion. Generic
+  AI-in-radiology color = Other.
 
 **PHARMA:**
 - BLAU (Blau Farmacêutica): Hospital-channel specialty pharma (biológicos,
@@ -246,11 +278,16 @@ moves (Novo Nordisk bundle discounts, Rybelsus markdowns, free-starter-dose
 promotions) that are leading indicators of ANS rol-inclusion economics. Per
 H&E Observer references, **first domestic semaglutide competitors may be
 registered by ~July 2026** — full-note territory when any of those approvals
-land or when ANS signals coverage intent. Sub-thread: **oral / pill-format
-GLP-1 alternatives** (e.g., the "7x cheaper than Mounjaro" pill class) —
-when a study confirms efficacy at materially lower cost, this is a
-medium-term payer-cost positive for HAPV/SAUD; flag as full-note when
-ANVISA registration or BR pricing is named.
+land or when ANS signals coverage intent. **UPDATE — archetype has fired:**
+the first domestic semaglutide pen has now CLEARED ANVISA (ahead of the
+July-2026 base case), an early payer-cost-relief signal for HAPV/SAUD. The
+watch now shifts forward to (i) commercial launch / pricing of the cleared
+pen, (ii) follow-on domestic approvals, and (iii) whether ANS signals
+rol-inclusion in response — each is its own full-note trigger. Sub-thread:
+**oral / pill-format GLP-1 alternatives** (e.g., the "7x cheaper than
+Mounjaro" pill class) — when a study confirms efficacy at materially lower
+cost, this is a medium-term payer-cost positive for HAPV/SAUD; flag as
+full-note when ANVISA registration or BR pricing is named.
 
 **Trigger frame for any GLP-1 story:** specify which covered name(s) are
 affected and the direction. Generic "Lilly beats" → flag for cross-cutting
@@ -293,6 +330,13 @@ HAPV-tag with read-across direction.
   2026 auto-enrollment rollout) → modest demand-funnel positive for
   YDUQ/COGN/ANIM (BR public-school funnel for low-ticket programs).
   Full-note when the rule is concrete and operator-tagged.
+- **Cotas / affirmative-action enforcement on medicine vagas** — MPF actions
+  and court rulings forcing institutions to fill idle (vagas ociosas)
+  medicine seats under the Lei de Cotas, or investigations into cota-compliance
+  failures, touch the high-margin medicine-vaga product directly. Read-across
+  to the names with the biggest medical-school footprints (YDUQ/ANIM/AFYA) —
+  full-note when a ruling names institutions or reallocates seats; generic
+  cota-policy debate is Other News.
 
 ---
 
@@ -303,26 +347,39 @@ When a headline clearly connects to one of these monitored themes, note it:
    tightening = material. Sub-thread: Enade quality-gap data (EAD vs
    presencial) feeding into the political case for further tightening.
 2. **"Medicine vagas expansion"** — Mais Médicos program, new course
-   authorizations, court rulings; affects YDUQ/ANIM/AFYA primarily
+   authorizations, court rulings; affects YDUQ/ANIM/AFYA primarily.
+   Sub-thread: **Lei de Cotas enforcement on idle medicine seats** (MPF
+   actions / court orders to fill vagas ociosas under affirmative-action
+   rules) — seat reallocation is a direct medicine-vaga read-across for
+   YDUQ/ANIM/AFYA.
 3. **"GLP-1 coverage debate (Brazil)"** — ANS coverage discussion, court
    rulings on judicialização of weight-loss drugs; HAPV cost exposure
 4. **"Hapvida/GNDI integration milestones"** — synergy capture, MLR trajectory,
    any operating-data points that confirm or challenge synergy thesis
 5. **"RDOR network expansion"** — hospital openings, acquisitions, opex
-   leverage on new units
+   leverage on new units. Sub-thread: capacity deals struck WITH a covered
+   payer (Bradsaúde / Rede D'Or new-hospital agreements) — tag SAUD/RDOR.
 6. **"Vertical integration (payer-provider)"** — HAPV model vs RDOR independent
    network; any payer M&A in hospitals or vice versa. Sub-thread:
    verticalization-cost narrative pieces ("custo invisível da
    verticalização") and SUS-vs-supplementar UTI-access studies — these
    are HAPV/RDOR-tagged sector color; full-note when they include a
-   data point that re-prices the model debate.
+   data point that re-prices the model debate. Sub-thread: Bradsaúde
+   building owned/partnered hospital capacity (SAUD/RDOR deals) is the
+   newest payer-provider data point to track.
 7. **"Fleury B2B/lab-to-lab strategy"** — Hermes Pardini integration synergies
    and the lab-to-lab consolidation story; premium-hospital partnership
-   announcements (Sírio-Libanês, Einstein) are a subset of this thread
+   announcements (Sírio-Libanês, Einstein) are a subset of this thread.
+   Sub-thread: FLRY ventures/JVs that deploy capital into adjacent assets
+   (the Fleury–Porto venture used as an ONCO capitalization vehicle) — tag
+   FLRY/ONCO, full note.
 8. **"ANS reajuste cycle"** — annual June/July decision; both individual and
    collective plan reajuste; the single biggest HAPV pricing event
 9. **"FIES recovery / Pé-de-Meia"** — government student financing programs;
-   affects all higher-ed names but YDUQ/COGN most exposed
+   affects all higher-ed names but YDUQ/COGN most exposed. Sub-thread:
+   **Desenrola FIES** student-debt renegotiation (e.g., R$2.8bn renegotiated
+   in the first ten days) — material for the funnel/default narrative; tag
+   YDUQ/COGN when volumes or default-rate implications are named.
 10. **"AFYA / LAUR USD-BRL sensitivity"** — NASDAQ-listed names with most
     revenue in BRL → quarterly forex P&L volatility
 11. **"Judicialização da saúde"** — court rulings that mandate procedure or
@@ -335,8 +392,11 @@ When a headline clearly connects to one of these monitored themes, note it:
     controller / sponsor transactions, covenant negotiations, and capitalization
     rounds via extrajudicial recovery (≥R$500mn deals with multiple
     counterparties). Defensive-liquidity moves (market-maker hires, e.g.,
-    BTG mandate) also count as incremental signal. Default to full note on
-    any concrete development.
+    BTG mandate) also count as incremental signal. **Capitalization-via-partner
+    sub-thread:** structured deals that open a fresh capital path for ONCO —
+    notably the Fleury–Porto venture that drove an ~57% share spike — are
+    full-note material and tag FLRY/ONCO. Default to full note on any concrete
+    development.
 13. **"SUS high-cost oncology package"** — Lula-government rollout of new
     oncology medicines through SUS (23-drug package and successors). Read-
     across: BLAU (supply-side beneficiary), ONCO (private-clinic mix shift if
@@ -356,11 +416,14 @@ When a headline clearly connects to one of these monitored themes, note it:
     expiry triggering Novo Nordisk pricing moves (free Wegovy starter-dose
     bundles, Rybelsus discount campaigns) and prospective generic entry in
     BR; first domestic semaglutide competitors may be registered by July 2026.
-    Flips the GLP-1 cost-pressure narrative for HAPV/SAUD over time. Any
-    concrete ANVISA approval of a domestic semaglutide is full-note material.
-    Sub-thread: oral / pill-format GLP-1 efficacy studies (cheaper-than-
-    Mounjaro alternatives) — payer-cost-positive when ANVISA / BR
-    pricing is named.
+    **The first domestic semaglutide pen has now cleared ANVISA** — the
+    anticipated approval has landed; the live watch is commercial launch /
+    pricing of that pen, follow-on domestic approvals, and any ANS
+    rol-inclusion response. Flips the GLP-1 cost-pressure narrative for
+    HAPV/SAUD over time. Any further concrete ANVISA approval of a domestic
+    semaglutide is full-note material. Sub-thread: oral / pill-format GLP-1
+    efficacy studies (cheaper-than-Mounjaro alternatives) — payer-cost-positive
+    when ANVISA / BR pricing is named.
 17. **"Distressed mid-sized hospital events"** — debenture emergencies,
     going-concern flags, or rescue-deal news at chains in the Alliança / Kora /
     Athena / Amico / Feri-Barra-da-Tijuca tier. Read-across: RDOR M&A target
@@ -379,7 +442,7 @@ When a headline clearly connects to one of these monitored themes, note it:
     (HAPV/FLRY 20x, HAPV/RDOR/FLRY 16x) but conversion to full notes
     is low — promote when ANY of: (i) a single state reports a clear
     record (e.g., chikungunya deaths exceeding prior-year total mid-
-    season), (ii) Fiocruz / SVS escalates an alert, (iii) the surge
+    season), (ii) Fiocruz / SVS escalates an alert, or (iii) the surge
     has named MLR or occupancy commentary from an operator. Generic
     "Brazil cases up X%" without state-level or operator angle = Other.
 20. **"SUS access / capacity studies"** — research notes or PRF/CFM
@@ -422,6 +485,8 @@ Examples:
 - Pharma-co promotional moves around the Mar-2026 patent cliff (Novo Nordisk
   Wegovy bundle/starter-dose, Rybelsus markdowns) — leading indicators of
   pricing economics post-generic entry
+- Domestic semaglutide ANVISA clearances (first pen now cleared) and follow-on
+  approvals — payer-cost-relief signals for HAPV/SAUD
 - Oral / pill-format GLP-1 efficacy studies at materially lower cost
 - These all forecast near-term ANS rol-update pressure → HAPV/SAUD cost line
 
@@ -481,9 +546,10 @@ use a multi-ticker tag. Examples that always hit ≥3 names:
 - **MEC EAD rules** (course authorization, polos limits): all 5 are exposed
   but YDUQ / COGN / ANIM most. Tag: `YDUQ/COGN/ANIM`.
 - **FIES / PROUNI / Pé-de-Meia changes**: similar — `YDUQ/COGN/ANIM` (AFYA
-  / LAUR less exposed).
-- **Medicine-vagas authorization batches**: tag the BR ones most exposed —
-  usually `YDUQ/ANIM/AFYA` (these have biggest medical-school footprints).
+  / LAUR less exposed). Desenrola FIES renegotiation volumes belong here.
+- **Medicine-vagas authorization batches AND cota-enforcement seat
+  reallocations**: tag the BR ones most exposed — usually `YDUQ/ANIM/AFYA`
+  (these have biggest medical-school footprints).
 - **Enade / CPC / IGC quality-assessment prints**: tag `YDUQ/COGN/ANIM`
   (full-cohort exposure to MEC EAD policy risk that this data feeds).
 - Do NOT default to a single ticker (LAUR or AFYA only) for sector-wide
@@ -510,7 +576,8 @@ or expand the materiality bar accordingly so the curator and note-writer agree:
 
 - **ANVISA (59x, 0 notes):** Tighten. Default ANVISA drug approvals belong in
   Other News. Promote only when: (i) approval is in a BLAU-competing segment;
-  (ii) approval is a GLP-1 or semaglutide-generic event; (iii) ANVISA acts on
+  (ii) approval is a GLP-1 or semaglutide-generic event (the first domestic
+  semaglutide pen clearance is the archetype); (iii) ANVISA acts on
   a covered name directly (audit, license, recall touching BLAU); (iv) ANVISA
   changes a class-level rule (cannabis medicinal, biosimilares, clinical-trial
   framework, ensaios clínicos law).
@@ -522,7 +589,9 @@ or expand the materiality bar accordingly so the curator and note-writer agree:
   mention BLAU only tangentially → Other News.
 - **FLRY (37x, 2 notes — promotion ~5%):** Tighten — see Diagnostics section
   above. Default to Other News unless the story is a B2B contract, partnership
-  with a premium hospital, reimbursement ruling, or capacity move.
+  with a premium hospital, reimbursement ruling, capacity move, or a
+  venture/JV capital-deployment event (e.g., the Fleury–Porto / ONCO
+  capitalization venture).
 - **ANS / HAPV/SAUD (28x / 94x, 0 notes as the multi-tag combo):** Expand.
   ANS suspensions, RN publications with reajuste mechanics, and STJ rulings
   against operators are all full-note candidates, not just Sector tags.
@@ -540,12 +609,14 @@ or expand the materiality bar accordingly so the curator and note-writer agree:
   Expand. Any concrete MEC EAD portaria with operator-named impact should be
   a full note, not a Sector tag. New Enade / CPC / IGC prints with EAD-vs-
   presencial gap data are also full-note candidates for the cohort. ENEM
-  rule-change prints with public-school funnel implications belong here too.
-- **AFYA (7x, 0 notes):** Expand for medicine-vagas events and US-listed
-  multiple events; keep new-campus openings as Other News.
+  rule-change prints with public-school funnel implications, and Lei-de-Cotas
+  / MPF actions reallocating idle medicine seats, belong here too.
+- **AFYA (7x, 0 notes):** Expand for medicine-vagas events (including
+  cota-enforcement seat reallocations) and US-listed multiple events; keep
+  new-campus openings as Other News.
 - **GLP-1 (11x, 0 notes):** Expand for items with explicit BR transmission
-  (ANVISA registration of domestic competitors, ANS rol decisions, Novo
-  Nordisk pricing campaigns ahead of patent cliff, oral-GLP-1 efficacy
+  (ANVISA registration of domestic competitors — now landed, ANS rol decisions,
+  Novo Nordisk pricing campaigns ahead of patent cliff, oral-GLP-1 efficacy
   studies with BR pricing angle). Generic US Lilly/Novo earnings recaps
   stay omitted.
 - **Judicialização (9x, 0 notes):** Expand when a single ruling sets a
@@ -557,7 +628,9 @@ or expand the materiality bar accordingly so the curator and note-writer agree:
   attached. Routine weekly case-count updates stay Sector-tagged.
 - **HAPV/RDOR sector-color (9x, 0 notes):** Expand. Verticalization-cost
   narratives and SUS-vs-supplementar capacity studies with a hard data
-  point are full-note candidates for the model-debate thread.
+  point are full-note candidates for the model-debate thread. The
+  Bradsaúde / Rede D'Or hospital-capacity partnership (SAUD/RDOR) is a
+  related payer-provider data point — promote when a deal is named/sized.
 - **Reforma Tributária / SUS macro tags (recurring, 0 notes):** Tighten.
   Generic "what changes with reforma tributária for your company" pieces
   stay in Other News. Promote only when the Comitê Gestor publishes a
@@ -594,7 +667,8 @@ Hcor       = HCor hospital
 Dr. Consulta = outpatient-clinic peer (relevant to ONCO / FLRY thinking)
 SulAmérica = SulAmérica saúde (payer peer to HAPV / SAUD)
 Amil       = Amil (payer peer to HAPV / SAUD)
-Porto      = Porto Saúde (payer peer to HAPV / SAUD)
+Porto      = Porto Saúde (payer peer to HAPV / SAUD; also Fleury–Porto venture
+             counterparty in the ONCO capitalization thread)
 Unimed     = Unimed cooperative system (peer; track operational/criminal
              events at specific singulars for HAPV/SAUD reputational
              read-across)
@@ -624,6 +698,8 @@ SVS      = Secretaria de Vigilância em Saúde / Fiocruz (epidemiology alerts �
            feed the arboviroses / SRAG running story)
 CG-IBS   = Comitê Gestor do IBS (reforma tributária operational rule-maker —
            split-payment specifications, sector regimes)
+MPF      = Ministério Público Federal (federal prosecutors — Lei de Cotas
+           actions on medicine vagas, SUS-access litigation)
 
 ### Multi-Ticker Format
 When a single story directly affects 2-3 covered names, join tickers with "/":
@@ -632,6 +708,8 @@ When a single story directly affects 2-3 covered names, join tickers with "/":
   "AFYA/LAUR"       — NASDAQ-listed pair, USD-BRL or US higher-ed comps
   "HAPV/SAUD"       — payer-specific regulatory story
   "ONCO/BLAU"       — SUS oncology package, oncology drug coverage events
+  "FLRY/ONCO"       — Fleury venture / JV used as an ONCO capitalization path
+  "SAUD/RDOR"       — Bradsaúde–Rede D'Or hospital-capacity / partnership deals
   "HAPV/RDOR/FLRY"  — epidemiology spikes hitting payer + hospital + lab
   "HAPV/FLRY"       — respiratory / chikungunya stories (MLR + lab tests)
 Max 3 tickers. Only use when BOTH names have a named investment angle."""

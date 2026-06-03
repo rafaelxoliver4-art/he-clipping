@@ -14,3 +14,7 @@ __pycache__/
 # ── Editor / misc ───────────────────────────────────────────────────
 _email_preview.html
 .vscode/
+
+# backup snapshots + diagnostic probes (git history is the backup)
+*_backup_*.py
+_probe_*.py
