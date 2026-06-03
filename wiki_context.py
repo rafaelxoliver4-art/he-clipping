@@ -297,7 +297,7 @@ section but not a covered-name note unless there's a named mechanism.
 
 ### Anatel-equivalent — ANS / MEC monthly cadence
 
-**ANS monthly RN updates** for Health Plans: track all RN (Resolução
+**ANS monthly RN updates** (Health - Payers & Pharma theme): track all RN (Resolução
 Normativa) publications. Key signals:
 - Reajuste decisions for individual plans (annual June-ish)
 - Rol de procedimentos updates (what's covered, what's not)
@@ -512,7 +512,7 @@ Examples:
   hospital wage line over the next 2-4 quarters
 
 **Epidemiology / outbreak events (multi-name read-across — KEEP and place
-in the "Epidemiology / Public Health" sector):**
+in the "Public Health & Regulation" sector):**
 Diseases that move medical utilization are MATERIAL across the universe.
 Don't dismiss them as generic health news.
 - **Dengue / arboviroses / Zika / chikungunya / febre amarela** (BR summer

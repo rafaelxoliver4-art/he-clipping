@@ -99,6 +99,13 @@ still read "07-00"/"17-00 BRT" but the morning one fires **06:40**.
 - Editorial rules: `wiki_context.py` → `ANALYST_CONTEXT`.
 
 ## Change log (most recent first — APPEND here on every change)
+- **2026-06-03** — **Restructured into 6 themes** (3 health + GLP-1 separate + 2
+  education): "Health - Providers", "Health - Payers & Pharma",
+  "Cross-cutting (GLP-1)", "Public Health & Regulation", "Education - Companies",
+  "Education - Policy & Medicine". Education input doubled (2×80 cap vs 1×80).
+  Touched `config.py` (SECTORS + SECTOR_ORDER), `claude_reasoning.py` (bucket
+  prompt + example), `wiki_context.py` (sector refs). Verified end-to-end +
+  test-sent to rafaelxoliver4@gmail.com.
 - **2026-06-03** — Audit fixes: skip empty-digest send; block company-own-site
   force-include ("Afya | Home", "Rede D'Or" marketing); committed the auto-learn
   `wiki_context.py`; gitignored stray probe/backup files.
@@ -123,9 +130,10 @@ still read "07-00"/"17-00 BRT" but the morning one fires **06:40**.
   a manual re-run (`_run_catchup.py`).
 - **Morning runs (Tue–Fri) are the overnight delta** (cross-run dedup) → can be
   thin on quiet nights. Monday uses a 72h weekend look-back.
-- **Education vs Health imbalance:** Health = 6 sectors, Education = 1. A
-  6-theme restructure (3 health + GLP-1 + 2 education) is **proposed but not yet
-  implemented** (awaiting owner go-ahead).
+- **Education vs Health imbalance:** RESOLVED 2026-06-03 — restructured into 6
+  themes (3 health + GLP-1 + 2 education); education input doubled. Note: digest
+  *output* still reflects materiality, so on thin-news days education can be light
+  (correct, not a regression).
 - **Auto-learn rewrites `wiki_context.py`** periodically — remember to commit it.
 
 ## Gotchas

@@ -223,14 +223,12 @@ from the H&E Online Observer editorial spec — not an analytical note.
 ---
 
 SECTORS — use EXACTLY these JSON keys (omit any sector with zero material items):
-- "Hospitals and Health Services"
-- "Health Plans"
-- "Diagnostics"
-- "Pharma"
-- "Higher Education"
+- "Health - Providers"             ← hospitals (RDOR, ONCO) + diagnostics (FLRY)
+- "Health - Payers & Pharma"       ← health plans (HAPV, ODPV, SAUD) + pharma (BLAU)
 - "Cross-cutting (GLP-1)"           ← weight-loss-drug stories with multi-sector read-across
-- "Epidemiology / Public Health"    ← outbreaks (dengue, flu, zika, COVID, sarampo) → HAPV MLR / RDOR utilization / FLRY tests / BLAU pharma
-- "General Regulatory / Macro"      ← ANS/MEC/ANVISA/STF rulings, tax reform, macro
+- "Public Health & Regulation"     ← outbreaks (dengue, flu, zika, COVID, sarampo) + ANS/ANVISA/SUS rulings, judicialização, tax
+- "Education - Companies"          ← education names by name (YDUQ, COGN, ANIM, AFYA, LAUR): earnings, M&A, ratings, KPIs
+- "Education - Policy & Medicine"  ← MEC/EAD/FIES/medicina vagas/ENADE/CNE — sector & regulatory
 - "Sell-side"                       ← broker rating changes / TP revisions / initiations
 
 TAG CONVENTION — the "ticker" field is the short label shown before each headline.
@@ -303,13 +301,14 @@ DO NOT include a "link" field — link plumbing is handled by the code,
 not by you. Focus on triage and tagging only.
 
 {{
-  "Hospitals and Health Services": [
+  "Health - Providers": [
     {{"ticker": "RDOR",       "headline": "exact headline text", "source": "Source Name", "date": "2026-05-19 14:30"}},
     {{"ticker": "HAPV/RDOR",  "headline": "...",                 "source": "...",         "date": "2026-05-19"}},
     {{"ticker": "Sector",     "headline": "...",                 "source": "...",         "date": ""}}
   ],
-  "Health Plans": [...],
-  "Higher Education": [...],
+  "Health - Payers & Pharma": [...],
+  "Education - Companies": [...],
+  "Education - Policy & Medicine": [...],
   "Cross-cutting (GLP-1)": [
     {{"ticker": "HAPV", "headline": "ANS opens consultation on GLP-1 coverage in rol",
       "source": "Valor", "date": "2026-05-19 09:15"}}

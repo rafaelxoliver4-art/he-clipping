@@ -86,76 +86,90 @@ COVERED_NAME_ALIASES = {
 #
 # Peer companies are non-covered names whose news still matters for read-across.
 
+# ── SECTORS — restructured 2026-06-03 into 6 themes (3 health + GLP-1 + 2 edu) ──
+# Goal: rebalance vs the old 6-health-vs-1-education layout, GLP-1 kept separate,
+# education split into Companies vs Policy/Medicine. No keywords lost in the merge.
 SECTORS = {
-    "Hospitals and Health Services": {
-        "covered": ["RDOR", "ONCO"],
+    "Health - Providers": {
+        # Hospitals and Health Services + Diagnostics consolidated
+        "covered": ["RDOR", "ONCO", "FLRY"],
         "peers": [
-            # Brazilian peers only — non-covered hospital networks whose news
-            # provides competitive context for RDOR / ONCO
+            # Hospitals
             "Rede D'Or", "Rede DOr", "Sao Luiz",
             "Oncoclinicas", "Oncoclínicas",
             "Albert Einstein", "Sirio Libanes", "Sírio Libanês",
             "Dasa hospital", "Mater Dei", "Hospital BP", "Beneficência Portuguesa",
             "Hospital 9 de Julho", "Hospital Samaritano",
             "Hospital Moinhos de Vento", "Hcor",
-            # Smaller/distressed hospital companies — important competitive
-            # signal (refinancing, M&A, capacity reallocation affecting RDOR/ONCO)
             "Alliança Saúde", "Allianca Saude", "Alliança hospital",
             "Kora Saúde", "Kora Saude",
             "Athena Saúde", "Athena Saude",
             "Amico", "Hospital São Camilo", "São Camilo",
+            # Diagnostics
+            "Fleury", "Dasa", "Pardini", "Hermes Pardini", "Sabin",
+            "Alvorada laboratório", "Salomão Zoppi",
         ],
         "keywords": [
-            # Covered company variants
+            # Hospitals — covered company variants
             "Rede D'Or", "Rede DOr", "RDOR", "São Luiz", "Sao Luiz",
             "Hospital São Luiz", "DF Star", "Quinta D'Or", "Caxias D'Or",
             "Rede D'Or São Luiz", "RDOR3",
             "Oncoclínicas", "Oncoclinicas", "ONCO3", "ONCO oncologia",
             "Oncoclínicas clínicas", "Oncoclínicas radioterapia",
             "Onco imuno-oncologia", "Onco infusão",
-            # Operational signals
+            # Hospitals — operational signals
             "leitos hospital", "leitos privados", "hospital privado Brasil",
             "rede hospitalar", "expansão hospitalar", "novo hospital Brasil",
             "M&A hospital Brasil", "consolidação hospitalar",
             "oncologia Brasil", "tratamento câncer Brasil", "imuno-oncologia Brasil",
             "tratamento oncológico Brasil", "radioterapia Brasil",
             "verticalização HMO Brasil",
-            # BR peers (no US peers — too much noise per Rafael)
             "Mater Dei hospital", "Dasa hospitais", "Albert Einstein hospital",
             "Sírio Libanês hospital", "Hcor hospital",
             "Beneficência Portuguesa hospital", "Hospital 9 de Julho",
-            # Small / distressed hospital chains — refinancing, M&A signal
             "Alliança Saúde", "Allianca Saude", "Kora Saúde",
             "Athena Saúde", "Amico hospital",
-            # Hospital labor / nursing supply (cost-line signal for RDOR/ONCO)
             "residência médica Brasil", "residência enfermagem Brasil",
             "falta de médicos hospital", "déficit enfermeiros Brasil",
             "MEC residência médica", "expansão residência saúde",
+            # Diagnostics — covered company variants
+            "Fleury", "FLRY", "FLRY3", "Fleury B2B", "Fleury lab to lab",
+            "Fleury patologia", "Fleury imagem", "Fleury medicina diagnóstica",
+            "Hermes Pardini Fleury", "Saúde iD Fleury", "Saúde iD premium",
+            "Dasa diagnóstico", "Pardini lab", "Sabin diagnóstico",
+            "laboratório clínico Brasil", "análises clínicas Brasil",
+            "diagnóstico por imagem Brasil", "medicina diagnóstica Brasil",
+            "exames laboratoriais Brasil", "diagnóstico Brasil",
+            "consolidação laboratórios Brasil",
         ],
     },
 
-    "Health Plans": {
-        "covered": ["HAPV", "ODPV", "SAUD"],
+    "Health - Payers & Pharma": {
+        # Health Plans + Pharma consolidated
+        "covered": ["HAPV", "ODPV", "SAUD", "BLAU"],
         "peers": [
-            # Brazilian peers only
+            # Payers
             "Hapvida", "Notre Dame Intermedica", "Notre Dame Intermédica", "GNDI",
             "Bradesco Saúde", "Bradsaude", "SulAmérica saúde", "SulAmerica saude",
             "Amil", "Porto Saúde", "Porto Seguro saude",
             "Odontoprev", "Caixa Seguros odonto",
             "Unimed", "Prevent Senior",
+            # Pharma
+            "Blau Farmacêutica", "Blau Farmaceutica", "BLAU",
+            "Eurofarma", "EMS farmacêutica", "Aché", "Hypera",
+            "Cristália farma",
         ],
         "keywords": [
-            # Covered company variants
+            # Payers — covered company variants
             "Hapvida", "HAPV", "HAPV3", "GNDI", "Intermédica",
             "Notre Dame Intermédica", "Hapvida verticalização",
             "rede própria Hapvida", "MLR Hapvida",
             "Bradesco Saúde", "Bradsaúde", "SAUD",
             "Bradesco Seguros saúde", "vidas BradSaúde",
             "Odontoprev", "ODPV", "ODPV3", "plano odontológico",
-            # BR competitive peers
             "SulAmérica saúde", "Amil", "Porto Saúde", "Unimed",
             "Prevent Senior", "Hapvida vs Amil",
-            # Regulator & KPIs (the most important rule-driving section)
+            # Payers — regulator & KPIs
             "ANS", "ANS reajuste", "ANS regulação", "ANS portabilidade",
             "ANS resolução normativa", "ANS RN", "ANS RN reajuste",
             "ANS rol de procedimentos", "ANS notícias",
@@ -168,50 +182,13 @@ SECTORS = {
             "verticalização saúde", "operadora plano de saúde",
             "preço plano de saúde", "tabela plano saúde",
             "carência plano de saúde", "portabilidade plano saúde",
-            # Cost / utilization signals
             "frequência utilização saúde", "diagnoses related group DRG Brasil",
-        ],
-    },
-
-    "Diagnostics": {
-        "covered": ["FLRY"],
-        "peers": [
-            # BR peers only
-            "Fleury", "Dasa", "Pardini", "Hermes Pardini", "Sabin",
-            "Alvorada laboratório", "Salomão Zoppi",
-        ],
-        "keywords": [
-            # Covered company variants
-            "Fleury", "FLRY", "FLRY3", "Fleury B2B", "Fleury lab to lab",
-            "Fleury patologia", "Fleury imagem", "Fleury medicina diagnóstica",
-            "Hermes Pardini Fleury", "Saúde iD Fleury", "Saúde iD premium",
-            # BR competitive peers (no Quest/LabCorp — US peers removed)
-            "Dasa diagnóstico", "Pardini lab", "Sabin diagnóstico",
-            # Sector
-            "laboratório clínico Brasil", "análises clínicas Brasil",
-            "diagnóstico por imagem Brasil", "medicina diagnóstica Brasil",
-            "exames laboratoriais Brasil", "diagnóstico Brasil",
-            "consolidação laboratórios Brasil",
-        ],
-    },
-
-    "Pharma": {
-        "covered": ["BLAU"],
-        "peers": [
-            # BR peers only
-            "Blau Farmacêutica", "Blau Farmaceutica", "BLAU",
-            "Eurofarma", "EMS farmacêutica", "Aché", "Hypera",
-            "Cristália farma",
-        ],
-        "keywords": [
-            # Covered company variants
+            # Pharma — covered company variants
             "Blau Farmacêutica", "Blau Farmaceutica", "BLAU", "BLAU3",
             "Blau hemoderivados", "Blau biológicos", "Blau especialidades",
             "Blau hospital channel", "Blau alta complexidade",
-            # BR competitive peers (no global pharma — too noisy)
             "Eurofarma", "EMS farmacêutica", "Hypera farma", "Aché farma",
             "Cristália farma",
-            # Regulatory & purchasing
             "medicamento Brasil", "biossimilar Brasil", "biológicos Brasil",
             "ANVISA", "ANVISA aprovação", "ANVISA registro",
             "PNI vacinas", "compras governo medicamento",
@@ -219,11 +196,7 @@ SECTORS = {
             "PCDT protocolo clínico", "judicialização medicamento",
             "CMED preço medicamento", "lista CMED",
             "medicamento órfão Brasil",
-            # GLP-1 drug-level only (parent companies removed — US peer noise)
-            "GLP-1 Brasil", "Ozempic Brasil", "Wegovy Brasil",
-            "Mounjaro Brasil", "tirzepatida Brasil", "semaglutida Brasil",
-            # Drug-discovery / pharma AI (long-term competitive frame for BLAU
-            # and broader pharma — Isomorphic Labs, AlphaFold-class events)
+            # Pharma — drug-discovery / AI
             "drug discovery AI", "pharma AI", "descoberta de medicamentos IA",
             "Isomorphic Labs", "AlphaFold pharma",
             "biotech IA Brasil", "farma inteligência artificial",
@@ -231,7 +204,56 @@ SECTORS = {
         ],
     },
 
-    "Higher Education": {
+    "Cross-cutting (GLP-1)": {
+        # GLP-1 affects payers (HAPV/SAUD) and hospitals (RDOR/ONCO) and diagnostics (FLRY)
+        # Kept as its OWN theme per owner request (restructure 2026-06-03).
+        "covered": [],
+        "peers": ["Mounjaro", "Ozempic", "Wegovy", "Zepbound"],
+        "keywords": [
+            "GLP-1 Brasil", "GLP-1 reembolso", "GLP-1 cobertura",
+            "GLP1 Brasil", "anti-obesidade medicamento",
+            "semaglutida Brasil", "tirzepatida Brasil",
+            "Ozempic Brasil", "Wegovy Brasil", "Mounjaro Brasil",
+            "rol GLP-1", "ANS GLP-1", "cobertura emagrecedor",
+            "judicialização GLP-1", "plano saúde cobertura emagrecedor",
+            "ANVISA emagrecedor", "ANVISA GLP-1",
+            "contrabando emagrecedor", "contrabando Ozempic",
+            "Mounjaro SUS", "GLP-1 SUS", "Ozempic SUS",
+            "fila Mounjaro", "fila Ozempic", "falta Wegovy",
+            "Mounjaro mercado paralelo", "Ozempic ilegal",
+            "Senado Mounjaro", "Senado SUS Mounjaro",
+            "ampliação acesso Mounjaro", "ampliação cobertura GLP-1",
+        ],
+    },
+
+    "Public Health & Regulation": {
+        # Epidemiology/outbreaks + general health regulation & macro consolidated.
+        "covered": [],
+        "peers": [],
+        "keywords": [
+            # Epidemiology / outbreaks
+            "dengue Brasil", "surto dengue", "epidemia dengue", "alerta dengue",
+            "casos dengue Brasil", "alerta arboviroses",
+            "zika Brasil", "chikungunya Brasil", "febre amarela Brasil",
+            "gripe H1N1 Brasil", "Influenza Brasil", "Influenza surto",
+            "vírus respiratório Brasil", "SRAG Brasil",
+            "COVID Brasil 2026", "nova variante COVID Brasil",
+            "sarampo Brasil", "meningite Brasil", "hepatite surto Brasil",
+            "vacinação Brasil 2026", "cobertura vacinal Brasil",
+            "PNI vacinação", "campanha vacinação",
+            "Ministério Saúde alerta", "Anvisa alerta epidemiológico",
+            "Fiocruz alerta", "boletim epidemiológico Brasil",
+            "El Niño dengue", "clima dengue Brasil",
+            # Health regulation & macro
+            "ANVISA notícias", "ANVISA regulação",
+            "judicialização saúde",
+            "Saúde Suplementar", "SUS Brasil",
+            "reforma tributária saúde", "imposto serviços saúde", "CVM saúde",
+        ],
+    },
+
+    "Education - Companies": {
+        # Company-specific education news (earnings, M&A, ratings, brands, KPIs)
         "covered": ["YDUQ", "COGN", "ANIM", "AFYA", "LAUR"],
         "peers": [
             "YDUQS", "Estácio", "Estacio",
@@ -242,29 +264,37 @@ SECTORS = {
             "Cruzeiro do Sul Educacional", "Adtalem Brasil",
         ],
         "keywords": [
-            # Tickers + parent names
-            # NB (2026-06-02): bare ambiguous common words removed/qualified —
-            # "Saber"(=to know), "Anima"(=animates), "Vasta"(=vast),
-            # "Laureate"(=award winner) were Google-News queries that flooded
-            # the Higher Education sector with unrelated noise (snail festivals,
-            # market reports, celebrity news) and buried real education news.
-            # Disambiguated forms still cover every company.
+            # Tickers + parent names (ambiguous bare words removed 2026-06-02 —
+            # "Saber"/"Anima"/"Vasta"/"Laureate" flooded the sector with noise)
             "YDUQS", "YDUQ", "Estácio",
             "Cogna", "COGN", "Kroton", "Vasta Educação",
             "Ânima Educação", "ANIM", "Inspirali",
             "Afya", "AFYA",
             "Laureate Educação", "LAUR",
-            # Subsidiary brands (acquired groups still produce news under brand)
+            # Subsidiary brands
             "Anhanguera", "Pitágoras", "Uniderp", "Unime",
             "Wyden", "iThink Medical", "Medcel",
             "Centro Universitário Una", "UniBH", "Unifacs", "São Judas",
             "Anhembi Morumbi", "UAM Anhembi",
-            # BR competitive peers (non-covered)
             "Cruzeiro do Sul Educacional",
+            # Operating KPIs
+            "captação aluno", "captação alunos", "captação ensino superior",
+            "ticket médio ensino superior", "ticket médio aluno",
+            "evasão ensino superior", "evasão graduação",
+            "mensalidade faculdade", "reajuste mensalidade",
+        ],
+    },
+
+    "Education - Policy & Medicine": {
+        # Regulation, EAD, financing, medicine vagas, quality assessments — sector/policy
+        "covered": [],
+        "peers": [],
+        "keywords": [
             # MEC regulation + key programs
             "MEC", "MEC EAD", "MEC regulação", "portaria MEC", "decreto educação",
             "recredenciamento MEC", "credenciamento institucional",
-            "CNE Conselho Nacional Educação",
+            "CNE Conselho Nacional Educação", "MEC notícias", "MEC portaria",
+            "MEC EAD regulação",
             # EAD as the dominant regulatory story
             "EAD", "ensino a distância", "ensino à distância", "ensino digital",
             "polos EAD", "polo de apoio presencial", "lei EAD",
@@ -279,94 +309,23 @@ SECTORS = {
             "medicina vagas", "vagas medicina", "abertura vagas medicina",
             "mais médicos", "Programa Mais Médicos",
             "escolas de medicina Brasil", "curso de medicina autorização",
-            # Operating KPIs
-            "captação aluno", "captação alunos", "captação ensino superior",
-            "ticket médio ensino superior", "ticket médio aluno",
-            "evasão ensino superior", "evasão graduação",
-            "mensalidade faculdade", "reajuste mensalidade",
             # Quality assessments (MEC-administered)
             "ENEM", "ENADE", "CPC Conceito Preliminar",
             "IGC Índice Geral Cursos",
-            # CNE / CES regulatory acts — catch resolutions and pareceres
+            # CNE / CES regulatory acts
             "CNE/CES", "CNE resolução", "CNE parecer", "CNE/CES resolução",
             "Conselho Nacional Educação resolução",
             "resolução educação superior", "parecer CNE",
             "Diário Oficial educação", "Diário Oficial MEC",
             "DOU resolução educação",
-            # K-12 (Vasta, Saber territory)
+            # K-12
             "novo ensino médio", "reforma ensino médio",
             "educação profissional", "ensino técnico",
             "PNAE livros didáticos", "FNDE compra livros",
             "PNE Plano Nacional Educação",
-        ],
-    },
-
-    "Cross-cutting (GLP-1)": {
-        # GLP-1 affects payers (HAPV/SAUD) and hospitals (RDOR/ONCO) and diagnostics (FLRY)
-        # Brazil-focused only — drug-level keywords, NOT US parent companies
-        "covered": [],
-        "peers": ["Mounjaro", "Ozempic", "Wegovy", "Zepbound"],
-        "keywords": [
-            "GLP-1 Brasil", "GLP-1 reembolso", "GLP-1 cobertura",
-            "GLP1 Brasil", "anti-obesidade medicamento",
-            "semaglutida Brasil", "tirzepatida Brasil",
-            "Ozempic Brasil", "Wegovy Brasil", "Mounjaro Brasil",
-            "rol GLP-1", "ANS GLP-1", "cobertura emagrecedor",
-            "judicialização GLP-1", "plano saúde cobertura emagrecedor",
-            "ANVISA emagrecedor", "ANVISA GLP-1",
-            # GLP-1 access / black-market / supply pressure (signals demand
-            # exceeding legal supply → near-term ANS/SUS pressure to expand coverage)
-            "contrabando emagrecedor", "contrabando Ozempic",
-            "Mounjaro SUS", "GLP-1 SUS", "Ozempic SUS",
-            "fila Mounjaro", "fila Ozempic", "falta Wegovy",
-            "Mounjaro mercado paralelo", "Ozempic ilegal",
-            "Senado Mounjaro", "Senado SUS Mounjaro",
-            "ampliação acesso Mounjaro", "ampliação cobertura GLP-1",
-        ],
-    },
-
-    "Epidemiology / Public Health": {
-        # Outbreaks and infectious-disease events affect ALL of:
-        #   HAPV / SAUD  → MLR / sinistralidade (more medical claims)
-        #   RDOR / ONCO  → hospital utilization (occupancy, ICU, oncology defer)
-        #   FLRY         → diagnostic test volumes (positive for flu/dengue/COVID panels)
-        #   BLAU         → anti-viral / vaccine / hemoderivado demand
-        "covered": [],
-        "peers": [],
-        "keywords": [
-            # Dengue & arboviroses (recurring BR risk every summer)
-            "dengue Brasil", "surto dengue", "epidemia dengue", "alerta dengue",
-            "casos dengue Brasil", "alerta arboviroses",
-            "zika Brasil", "chikungunya Brasil", "febre amarela Brasil",
-            # Respiratory / influenza
-            "gripe H1N1 Brasil", "Influenza Brasil", "Influenza surto",
-            "vírus respiratório Brasil", "SRAG Brasil",
-            # COVID legacy + new variants
-            "COVID Brasil 2026", "nova variante COVID Brasil",
-            # Other outbreaks
-            "sarampo Brasil", "meningite Brasil", "hepatite surto Brasil",
-            # Vaccination + immunization signal (BLAU + payer)
-            "vacinação Brasil 2026", "cobertura vacinal Brasil",
-            "PNI vacinação", "campanha vacinação",
-            # Sector-level epidemiology
-            "Ministério Saúde alerta", "Anvisa alerta epidemiológico",
-            "Fiocruz alerta", "boletim epidemiológico Brasil",
-            "El Niño dengue", "clima dengue Brasil",
-        ],
-    },
-
-    "General Regulatory / Macro": {
-        "covered": [],
-        "peers": [],
-        "keywords": [
-            "ANS notícias", "ANS resolução", "ANS RN", "ANS reajuste",
-            "MEC notícias", "MEC portaria", "MEC EAD regulação",
-            "ANVISA notícias", "ANVISA regulação",
-            "judicialização saúde", "judicialização medicamento",
-            "Saúde Suplementar", "SUS Brasil",
-            "PEC educação", "reforma tributária saúde", "reforma tributária educação",
-            "imposto serviços saúde", "imposto educação",
-            "CVM saúde", "CVM educação",
+            # Education macro/tax
+            "PEC educação", "reforma tributária educação", "imposto educação",
+            "CVM educação",
         ],
     },
 }
@@ -883,14 +842,12 @@ MAX_DIGEST_ITEMS = 60
 
 # ── Sector display order (used by email + markdown renderers) ────────────────
 SECTOR_ORDER = [
-    "Hospitals and Health Services",
-    "Health Plans",
-    "Diagnostics",
-    "Pharma",
-    "Higher Education",
+    "Health - Providers",
+    "Health - Payers & Pharma",
     "Cross-cutting (GLP-1)",
-    "Epidemiology / Public Health",   # outbreak signals → HAPV MLR, RDOR utilization
-    "General Regulatory / Macro",
+    "Public Health & Regulation",
+    "Education - Companies",
+    "Education - Policy & Medicine",
     "General",
     "Sell-side",   # broker rating changes — appears last before events
 ]
