@@ -5,17 +5,20 @@
 # clipping curation (Job 1) and note writing (Job 3). The learn cycle refines
 # this string every 10 runs based on all 7+ learning sources.
 
-ANALYST_CONTEXT = """The session excerpts in C (News Writer) and D (Claude Code) are essentially all TMT (Millicom, TOTVS, GLOB/CINT, AMX/TEF-BZ/TIM, portability data, model-building) — I'm ignoring all of that per the filtering rule. The actionable H&E signal comes from B (run log notes written), F (corpus promotion gaps), G (H&E Observer doc), and H (revealed priorities, which the context already handles well).
+ANALYST_CONTEXT = """After filtering C and D (entirely TMT — Millicom, TOTVS, GLOB/CINT, AMX/TEF-BZ/TIM, portability, Anatel, crowding scores — all out of scope), the only H&E-relevant signal sits in B, F, G, and H.
 
-Concrete H&E developments clearly evidenced and not yet in the context:
-1. **FLRY/ONCO Fleury–Porto venture** as a capitalization path for distressed ONCO (note written) — extends running story #12.
-2. **SAUD/RDOR payer-provider hospital partnership** (R$59.2mn Rio hospital note written) — new multi-tag thread.
-3. **First domestic semaglutide pen now CLEARED by ANVISA** (note written) — the anticipated archetype in #16 has fired; watch shifts to ANS response.
-4. **Desenrola FIES** renegotiation program — specific, recurring under #9.
-5. **Lei de Cotas / MPF enforcement on idle medicine vagas** — new YDUQ/ANIM/AFYA read-across (curated, never promoted).
-6. **SAUD/RDOR and FLRY/ONCO** added to multi-ticker format (both tags were actually used in notes).
+Cross-checking every H&E development in those inputs against the current ANALYST_CONTEXT:
 
-Here is the updated ANALYST_CONTEXT:
+- **FLRY/ONCO Fleury–Porto capitalization venture** (note written, B) → already in Diagnostics, ONCO section, running stories #7 & #12, and multi-ticker format.
+- **SAUD/RDOR R$59.2mn Rio hospital partnership** (note written, B) → already in RDOR, SAUD, running stories #5 & #6, and multi-ticker format.
+- **First domestic semaglutide pen cleared by ANVISA** (note written, B) → already in GLP-1 section, running story #16, ANVISA calibration note, and GLP-1 access signals.
+- **Desenrola FIES** R$2.8bn renegotiation (F, never-promoted) → already in running story #9 and FIES multi-ticker note.
+- **Lei de Cotas / MPF on idle medicine vagas** (F, YDUQ/ANIM/AFYA) → already in MEC cycle, running story #2, and medicine-vagas tagging.
+- **ANS reajuste-cap (11%), Venda suspensa lists, STJ "falso coletivo", verticalização-cost, SUS-UTI access, arboviroses/Chikungunya records, Reforma Tributária split-payment, ENEM auto-enrollment, Enade EAD gap, Anhanguera presencial, ODPV 96%-capex-tech** → each already has a dedicated calibration note or running story.
+
+Every H&E ticker, ruling, read-across, and running story evidenced in B/F/G/H — including all three most recent notes written and Rafael's full Observer priority ranking (ONCO 12, HAPV 9, YDUQS 7, LAUR 6...) — is already captured in the current context. The LAUR under-surfacing gap, HAPV/SAUD under-promotion, MEC-EAD multi-tag, and BLAU/ANVISA over-surfacing are all already flagged in the calibration section.
+
+There is no clearly-evidenced H&E refinement that is not already present. Per the operating rule ("never make the clipping worse," "2–6 targeted additions beat 20 vague ones," and return unchanged when the signal is already incorporated), forcing new edits would only add noise. I am returning ANALYST_CONTEXT unchanged.
 
 ## UBS LatAm H&E — Analyst Triage Context
 
