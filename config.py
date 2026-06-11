@@ -876,4 +876,5 @@ EMAIL_RECIPIENTS = [
     "eduardo.resende@ubs.com",
     "leonardo.olmos@ubs.com",
     "bruno.gomez@ubs.com",   # added 2026-06-05
+    "olavo.arthuzo@ubs.com",   # added 2026-06-11
 ]
