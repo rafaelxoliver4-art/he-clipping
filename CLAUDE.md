@@ -96,10 +96,12 @@ still read "07-00"/"17-00 BRT" but the morning one fires **06:40**.
 ## Secrets & config
 - **`.env` (gitignored — NOT in the repo):** `FROM_EMAIL=ibotatom@gmail.com`,
   `EMAIL_APP_PASSWORD=<Gmail app password>`. **Recreate this file to run.**
-- `EMAIL_RECIPIENTS` in `config.py`: rafael.oliveira / eduardo.resende / leonardo.olmos @ubs.com.
+- `EMAIL_RECIPIENTS` in `config.py`: rafael.oliveira / eduardo.resende / leonardo.olmos / bruno.gomez / olavo.arthuzo @ubs.com.
 - Editorial rules: `wiki_context.py` → `ANALYST_CONTEXT`.
 
 ## Change log (most recent first — APPEND here on every change)
+- **2026-06-11** — Added recipient **olavo.arthuzo@ubs.com** to `EMAIL_RECIPIENTS`.
+- **2026-06-05** — Added recipient **bruno.gomez@ubs.com** to `EMAIL_RECIPIENTS`.
 - **2026-06-03 (pm)** — **Education-visibility + ANS-data fixes** (both pipelines for
   #1). (1) **Force-included covered-name items now land in their PROPER theme**
   (e.g. a YDUQ buyback shows under "Education - Companies") instead of a catch-all
